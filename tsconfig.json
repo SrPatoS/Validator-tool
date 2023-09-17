@@ -3,6 +3,8 @@
     "target": "ES6",
     "outDir": "./dist",
     "rootDir": "./src",
+    "declaration": true,
+    "module": "CommonJS"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

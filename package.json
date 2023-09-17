@@ -2,7 +2,8 @@
   "name": "validator-tool",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "start:dev": "npx tsx watch ./src/app.ts",
     "start:build": "tsc",
