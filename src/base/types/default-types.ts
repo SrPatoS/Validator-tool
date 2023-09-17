@@ -1,5 +1,7 @@
 export enum DefaultTypes {
     number = "number",
     boolean = "boolean",
-    string = "string"
+    string = "string",
+    email = "email",
+    date = "date"
 }

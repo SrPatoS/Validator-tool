@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tsx watch ./src/app.ts"
+    "start:dev": "npx tsx watch ./src/app.ts",
+    "start:build": "tsc",
+    "start:pack": "npm pack",
+    "start:publish": "npm publish",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
     "typescript": "^5.2.2"
   }
 }

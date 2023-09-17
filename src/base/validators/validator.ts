@@ -1,6 +1,7 @@
 import { validationErrorMessages } from "../response/default-reponse-messages";
 import { DefaultResponseType } from "../types/default-response.type";
 import { DefaultTypes } from "../types/default-types";
+import { AppRegex } from "../regex/regex";
 
 interface Props {
     input: any;
@@ -27,6 +28,27 @@ export const validator = (props: Props): DefaultResponseType => {
 
     if (props.type === DefaultTypes.string) {
         if (!(typeof props.input === "string")) {
+            res.errors.push({
+                type: props.type,
+                message: validationErrorMessages.invalidFormat
+            });
+            return res;
+        }
+    }
+
+    if (props.type === DefaultTypes.email) {
+        if (!AppRegex.email.test(props.input)) {
+            res.errors.push({
+                type: props.type,
+                message: validationErrorMessages.invalidFormat
+            });
+            return res;
+        }
+    }
+
+    if (props.type === DefaultTypes.date) {
+        const date = new Date(props.input);
+        if ((isNaN(date.getTime()))) {
             res.errors.push({
                 type: props.type,
                 message: validationErrorMessages.invalidFormat
