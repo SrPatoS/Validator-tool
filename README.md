@@ -24,12 +24,12 @@ Validator Tool is a versatile data validation library for JavaScript and TypeScr
 Install Validator Tool using npm or yarn:
 
 ```bash
-npm install validator-tool
+npm install sp-validator-tool
 ```
 or
 
 ```bash
-yarn add validator-tool
+yarn add sp-validator-tool
 ```
 
 ## Usage Examples
