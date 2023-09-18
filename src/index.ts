@@ -14,6 +14,8 @@ namespace vt {
 
 export type Schema = ValidationSchema;
 export type Types = DefaultTypes;
+export type Error = ErrorType;
+export type Response = DefaultValidationResponseType;
 export class Model extends ValidatorObject { };
 
 export default vt;
