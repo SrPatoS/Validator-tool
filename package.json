@@ -14,8 +14,8 @@
     "version:minor": "npm version minor",
     "version:major": "npm version major"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "@srpatos",
+  "license": "MIT",
   "dependencies": {
     "typescript": "^5.2.2"
   }
