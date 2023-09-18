@@ -41,7 +41,7 @@ Here are some examples of how to use the `validator-tool` library for data valid
 To use the library in a CommonJS environment, you can do the following:
 
 ```javascript
-const { Model } = require("validator-tool").default;
+const { Model } = require("sp-validator-tool").default;
 
 const userValidator = new Model({
     name: {
@@ -67,7 +67,7 @@ In this example, we import the Model class from the validator-tool package and c
 Here are some examples of how to use the `validator-tool` library for data validation in TypeScript:
 
 ```typescript
-import { Model, Schema } from "validator-tool";
+import { Model, Schema } from "sp-validator-tool";
 
 const userValidationSchema: Schema = {
     name: {
