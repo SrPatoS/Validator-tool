@@ -74,6 +74,13 @@ const validateLength = (value: string | number, field: string, min?: number, max
     }
 
     if (typeof value === "string") {
+        if (min === 0 && value.length < 0) {
+            res.errors.push({
+                type: "number",
+                message: validationErrorMessages.minLength
+            });
+        }
+        
         if ((min && value.length < min)) {
             res.errors.push({
                 type: "string",
@@ -91,19 +98,24 @@ const validateLength = (value: string | number, field: string, min?: number, max
     }
 
     if (typeof value === "number") {
-        const valueString = value.toString();
-
-        if ((min && valueString.length < min)) {
+        if (min === 0 && value < 0) {
             res.errors.push({
                 type: "number",
-                message: validationErrorMessages.minLength
+                message: validationErrorMessages.minValue
             });
         }
 
-        if ((max && valueString.length > max)) {
+        if ((min && value < min)) {
             res.errors.push({
                 type: "number",
-                message: validationErrorMessages.maxLength
+                message: validationErrorMessages.minValue
+            });
+        }
+
+        if ((max && value > max)) {
+            res.errors.push({
+                type: "number",
+                message: validationErrorMessages.maxValue
             });
         }
 
