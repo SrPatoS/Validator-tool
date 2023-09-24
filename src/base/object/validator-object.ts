@@ -1,5 +1,4 @@
 import { DefaultValidationResponseType } from "../types/default-validation-response.type";
-import { validationErrorMessages } from "../response/default-reponse-messages";
 import { ValidationSchema, keyType } from "../types/validation-schema.type";
 import { validator } from "../validators/validator";
 
@@ -10,18 +9,13 @@ export class ValidatorObject {
         this.schema = schema;
     }
 
-    public validate(value: object, output?: boolean): DefaultValidationResponseType {
+    public validate(value: any, output?: boolean): DefaultValidationResponseType {
         const res: DefaultValidationResponseType = {
             errorsCount: 0,
             validations: []
         }
 
-        if (!value) {
-            res.validations.push({ field: "input", value: null, errors: [{ type: "null", message: validationErrorMessages.requiredField }] })
-        }
-
         const keysSchema = Object.keys(this.schema);
-        const keysObject = Object.keys(value);
 
         for (const keySchema of keysSchema) {
             const schema = <keyType>this.schema[keySchema];
@@ -29,12 +23,12 @@ export class ValidatorObject {
             if (!schema.required)
                 break;
 
-            for (const keyObject of keysObject) {
-                if (keySchema === keyObject) {
+            for (let i = 0; i < keysSchema.length; i++) {
+                if (keySchema === keysSchema[i]) {
                     const result = validator({
-                        field: keyObject,
+                        field: keysSchema[i],
                         type: schema.type,
-                        input: value[keyObject],
+                        input: value[keysSchema[i]],
                         min: schema.min,
                         max: schema.max,
                     });
