@@ -3,7 +3,7 @@
 **A lightweight data validation library for JavaScript and TypeScript.**
 
 [![Project Status](https://img.shields.io/badge/status-under%20development-brightgreen)](https://github.com/SrPatoS/Validator-tool)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/SrPatoS/Validator-tool/releases)
+[![Version](https://img.shields.io/badge/version-1.0.6-blue)](https://github.com/SrPatoS/Validator-tool/releases)
 
 ## Overview
 
